@@ -5,21 +5,47 @@
     </head>
     <body>
         
-        <h1>  </h1>
+        <h1></h1>
+
+        <p></p>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
         <script>
 
-            const queryString = window.location.search
+            const axios = require('axios');
 
-            const paramsURL = new URLSearchParams(queryString)
+            const queryString = window.location.search;
 
-            const paramsObject = Object.fromEntries(paramsURL.entries())
+            const paramsURL = new URLSearchParams(queryString);
 
-            console.log(paramsObject)
+            const paramsObject = Object.fromEntries(paramsURL.entries());
+
+            console.log(paramsObject);
             
-            const heading = document.querySelector("h1")
+            const heading = document.querySelector("h1");
+            
+            const paragraph = document.querySelector("p");
 
-            heading.innerHTML = JSON.stringify(paramsObject)
+            heading.innerHTML = JSON.stringify(paramsObject);
+
+            axios.get("https://paseme.vercel.app/api/atendimento", {
+
+                params: paramsObject
+
+            })
+
+                .then(function(response) {
+
+                    paragraph.innerHTML = JSON.stringify(response)
+
+                })
+
+                .catch(function(error) {
+
+                    console.log(error)
+
+                })
             
         </script>
 
