@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Paseme Web </title>
+    </head>
+    <body>
+        
+        <h1>  </h1>
+
+        <script>
+
+            const queryString = window.location.search
+
+            const paramsURL = new URLSearchParams(queryString)
+
+            const paramsObject = Object.fromEntries(paramsURL.entries())
+
+            console.log(paramsObject)
+            
+            const heading = document.querySelector("h1")
+
+            heading.innerHTML = JSON.stringify(paramsObject)
+            
+        </script>
+
+    </body>
+</html>
