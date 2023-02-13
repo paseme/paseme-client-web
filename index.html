@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <title> Paseme Web </title>
+        
+        <link rel="stylesheet" href="./style.css">
+        <link rel="shortcut icon" href="./icon.png" type="image/png">
+    
     </head>
     <body>
         
-        <h1></h1>
+        <div class="screen">
 
-        <p></p>
+            <div class="header">
+                <div class="header-primarytext"> Olá, espere </div>
+                <div class="header-secondarytext"> um momento </div>
+            </div>
+
+            <div class="window">
+                <div class="window-time">
+                    <div class="window-time-hour"> 00:00 AM </div>
+                    <div class="window-time-day"> Segunda-feira, 01 de janeiro de 2000 </div>
+                </div>
+                <div class="window-center">
+                    <div class="window-center-code">
+                        A123
+                    </div>
+                    <div class="window-center-estimation">
+                        Estimativa de 00 minutos
+                    </div>
+                </div>
+                <div class="window-button-area">
+                    <button> Sair da fila </button>
+                </div>
+            </div>
+
+        </div>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
@@ -21,11 +52,11 @@
 
             console.log(paramsObject);
             
-            const heading = document.querySelector("h1");
+            /*
+                const heading = document.querySelector("h1");
             
-            const paragraph = document.querySelector("p");
-
-            heading.innerHTML = JSON.stringify(paramsObject);
+                heading.innerHTML = JSON.stringify(paramsObject);
+            */
 
             axios.get("https://paseme.vercel.app/api/atendimento", {
 
@@ -35,9 +66,21 @@
 
                 .then(function(response) {
 
+                    const windowTimeHour = document.querySelector(".window-time-hour");
+
+                    const windowTimeDay = document.querySelector(".window-time-day");
+
+                    const windowCenterCode = document.querySelector(".window-center-code");
+
                     console.log(response.data)
 
-                    paragraph.innerHTML = JSON.stringify(response.data)
+                    const tempo = new Date(response.data.tempo);
+
+                    windowTimeHour.innerHTML = tempo.toLocaleTimeString("pt-BR", { hour12: true });
+
+                    windowTimeDay.innerHTML = tempo.toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "long", year: "numeric" });
+
+                    windowCenterCode.innerHTML = response.data.codigo;
 
                 })
 
