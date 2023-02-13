@@ -82,8 +82,16 @@ div.window {
     }
     
     div.header {
-        padding: 64px 32px;
+        padding: 32px 24px;
     }
+
+        div.header-primarytext {
+            font-size: 18pt;
+        }
+
+        div.header-secondarytext {
+            font-size: 24pt;
+        }
 
     div.window {
         border-radius: 32px 32px 0 0;
@@ -91,14 +99,26 @@ div.window {
         height: auto;
     }
 
-    div.window-time-hour,
-    div.window-time-day {
-        text-align: left;
-    }
+        div.window-time-hour {
+            font-size: 18pt;
+            text-align: left;
+        }
+
+        div.window-time-day {
+            text-align: left;
+        }
+
+        div.window-center-code {
+            font-size: 48pt;
+        }
 
     div.window-button-area {
         display: flex;
         justify-content: flex-end
+    }
+
+    div.window button {
+        padding: 12px 24px;
     }
 
 }
