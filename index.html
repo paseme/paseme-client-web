@@ -77,9 +77,9 @@
 
                     const tempo = new Date(response.data.tempo);
 
-                    windowTimeHour.innerHTML = tempo.toLocaleTimeString("pt-BR", { hour12: true });
+                    windowTimeHour.innerHTML = tempo.getTime();
 
-                    windowTimeDay.innerHTML = tempo.toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "long", year: "numeric" });
+                    windowTimeDay.innerHTML = tempo.getDate();
 
                     windowCenterCode.innerHTML = response.data.codigo;
 
