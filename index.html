@@ -5,11 +5,25 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title> Paseme Web </title>
+        <title> Paseme Client Web </title>
         
-        <link rel="stylesheet" href="./style.css">
-        <link rel="shortcut icon" href="./icon.png" type="image/png">
-        <link rel="manifest" href="./manifest.json">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+        <meta name="author" content="paseme">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="description" content="Página do cliente web no paseme.">
+        <meta name="keywords" content="paseme, pasemeapp">
+
+        <link rel="stylesheet" href="./src/css/Computer.css">
+        <link rel="stylesheet" href="./src/css/Mobile.css">
+
+        <link rel="shortcut icon" href="./src/img/icon48.png" type="image/png">
+
+        <link rel="manifest" href="./src/manifest.json">
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     
     </head>
     <body>
@@ -24,7 +38,7 @@
             <div class="window">
                 <div class="window-time">
                     <div class="window-time-hour"> 00:00 AM </div>
-                    <div class="window-time-day"> Segunda-feira, 01 de janeiro de 2000 </div>
+                    <div class="window-time-day"> 01 de janeiro de 2000 </div>
                 </div>
                 <div class="window-center">
                     <div class="window-center-code">
@@ -41,57 +55,8 @@
 
         </div>
 
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-        <script>
-
-            const queryString = window.location.search;
-
-            const paramsURL = new URLSearchParams(queryString);
-
-            const paramsObject = Object.fromEntries(paramsURL.entries());
-
-            console.log(paramsObject);
-            
-            /*
-                const heading = document.querySelector("h1");
-            
-                heading.innerHTML = JSON.stringify(paramsObject);
-            */
-
-            axios.get("https://paseme.vercel.app/api/atendimento", {
-
-                params: paramsObject
-
-            })
-
-                .then(function(response) {
-
-                    const windowTimeHour = document.querySelector(".window-time-hour");
-
-                    const windowTimeDay = document.querySelector(".window-time-day");
-
-                    const windowCenterCode = document.querySelector(".window-center-code");
-
-                    console.log(response.data)
-
-                    const tempo = new Date(response.data.tempo);
-
-                    windowTimeHour.innerHTML = tempo.getTime();
-
-                    windowTimeDay.innerHTML = tempo.getDate();
-
-                    windowCenterCode.innerHTML = response.data.codigo;
-
-                })
-
-                .catch(function(error) {
-
-                    console.log(error)
-
-                })
-            
-        </script>
+        <script src="./src/js/script.js"></script>
 
     </body>
 </html>

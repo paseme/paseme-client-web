@@ -1,0 +1,28 @@
+{
+    "name": "Paseme Client Web",
+    "display": "standalone",
+    "description": "Página do cliente web no paseme.",
+    "theme_color": "#6AE7D0",
+    "icons": [
+        {
+            "src": "/img/icon512.svg",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/img/icon192.svg",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/img/icon96.svg",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "/img/icon48.svg",
+            "type": "image/png",
+            "sizes": "48x48"
+        }
+    ]
+}

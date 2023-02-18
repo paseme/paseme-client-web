@@ -1,0 +1,73 @@
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(90deg, #6AE7D0, #84D8F2);
+    color: #3B4A5A;
+    height: 100svh;
+    overflow: hidden;
+}
+
+div.screen {
+    margin: 0 auto;
+    width: 512px;
+}
+
+div.header {
+    padding: 32px 0;
+}
+
+    div.header-primarytext {
+        font-size: 24pt;
+        line-height: 1;
+    }
+
+    div.header-secondarytext {
+        font-size: 32pt;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+div.window {
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 384px;
+    padding: 32px;
+    text-align: center;
+}
+
+    div.window-time-hour {
+        font-size: 16pt;
+    }
+
+    div.window-time-day,
+    div.window-center-estimation {
+        font-size: 16pt;
+    }
+
+    div.window-center-code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 64pt;
+        font-weight: bold;
+    }
+
+    div.window-button-area {
+        text-align: right;
+    }
+
+    div.window button {
+        background: #45C3EA;
+        border: none;
+        border-radius: 16px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16pt;
+        padding: 8px 32px;
+    }
