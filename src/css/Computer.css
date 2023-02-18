@@ -44,12 +44,12 @@ div.window {
 }
 
     div.window-time-hour {
-        font-size: 16pt;
+        font-size: 14pt;
     }
 
     div.window-time-day,
     div.window-center-estimation {
-        font-size: 16pt;
+        font-size: 14pt;
     }
 
     div.window-center-code {
@@ -68,6 +68,6 @@ div.window {
         border-radius: 16px;
         color: #fff;
         cursor: pointer;
-        font-size: 16pt;
-        padding: 8px 32px;
+        font-size: 12pt;
+        padding: 12px 42px;
     }

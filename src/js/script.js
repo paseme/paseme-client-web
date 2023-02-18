@@ -16,7 +16,7 @@ function RequestServer(params) {
 
         method: "GET",
 
-        url: "https://api.paseme.app/api/atendimento",
+        url: "https://api.paseme.app/api/service",
 
         params
 
@@ -42,17 +42,37 @@ function main() {
 
         .then(function(result) {
 
-            const tempo = new Date(result.data.tempo);
+            const { service, access } = result.data
 
-            const codigo = result.data.codigo.toUpperCase();
+            const serviceTime = new Date(service.time);
+
+            const serviceCode = service.code;
 
             ModifyDatas(
 
-                tempo.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", hour12: true }),
+                serviceTime.toLocaleTimeString("pt-BR", { 
+                    
+                    hour: "2-digit", 
+                    
+                    minute: "2-digit", 
+                    
+                    hour12: true 
+                
+                }),
 
-                tempo.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long", year: "numeric" }),
+                serviceTime.toLocaleDateString("pt-BR", { 
+                    
+                    weekday: "long", 
+                    
+                    day: "numeric", 
+                    
+                    month: "long", 
+                    
+                    year: "numeric" 
+                
+                }),
 
-                codigo
+                serviceCode
 
             );
 

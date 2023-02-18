@@ -26,6 +26,11 @@
     }
 
         div.window-time-hour,
+        div.window-time-day {
+            text-align: left;
+        }
+
+        div.window-time-hour,
         div.window-center-estimation {
             font-size: 16pt;
         }
